@@ -1,20 +1,21 @@
 const { recalculate } = require("./calculator");
+const { DateTime } = require("luxon");
 
 test("Does some math", () => {
   const arrange = {
-    purchaseDate: 0,
-    loan: 0,
-    term: 0,
-    rate: 0,
-    remaining: 0,
+    purchaseDate: DateTime.fromISO("2018-01-01"),
+    loan: 400000,
+    term: 30,
+    rate: 4.2,
+    remaining: 375000,
     newTerm: 0,
     newRate: 0,
   };
 
   // assert
   const assert = {
-    effectiveMonthly: 2000.0,
-    interestPaid: 40000,
+    effectiveMonthly: 2115.45,
+    interestPaid: 44828.75,
     projectedInterest: 300000,
   };
   expect(recalculate(arrange)).toEqual(assert);
