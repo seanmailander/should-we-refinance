@@ -81,9 +81,9 @@ export const recalculate = ({
     scheduledPayment
   );
 
-  const timeTakenInMonths = Math.floor(
-    DateTime.utc().diff(purchaseDate, "months").toObject().months
-  );
+  const timeTakenInMonths =
+    Math.floor(DateTime.utc().diff(purchaseDate, "months").toObject().months) ||
+    10;
 
   const recompute = converge(loan, rate, term, timeTakenInMonths, remaining);
   const payment = recompute(recompute, scheduledPayment);

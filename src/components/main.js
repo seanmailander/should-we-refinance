@@ -5,11 +5,16 @@ import { Future } from "../control-panels/future";
 import { Results } from "./results";
 import { DateTime } from "luxon";
 
+const luxonFromPicker = ({ year, month }) =>
+  DateTime.fromISO(
+    `${year}-${month.toLocaleString(undefined, {
+      minimumIntegerDigits: 2,
+    })}-01`
+  );
+
 export const Main = () => {
   // The past
-  const [purchaseDate, setPurchaseDate] = useState(
-    DateTime.fromISO("2018-01-01")
-  );
+  const [purchaseDate, setPurchaseDate] = useState({ year: 2018, month: 1 });
   const [loan, setLoan] = useState(375000);
   const [term, setTerm] = useState(30);
   const [rate, setRate] = useState(4.2);
@@ -41,7 +46,7 @@ export const Main = () => {
         setNewRate={setNewRate}
       ></Future>
       <Results
-        purchaseDate={purchaseDate}
+        purchaseDate={luxonFromPicker(purchaseDate)}
         loan={loan}
         term={term}
         rate={rate}

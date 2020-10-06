@@ -1,5 +1,18 @@
-import React from "react";
+import React, { useRef } from "react";
+import Picker from "react-month-picker";
+
 import { Slider } from "./slider";
+import { DateTime } from "luxon";
+
+const luxonFromPicker = (month) =>
+  DateTime.fromISO(
+    `2020-${month.toLocaleString(undefined, {
+      minimumIntegerDigits: 2,
+    })}-01`
+  );
+
+const getMonth = (i) => luxonFromPicker(i + 1).monthLong;
+const months = [...Array(12).keys()].map(getMonth);
 
 export const Past = (props) => {
   const {
@@ -12,18 +25,26 @@ export const Past = (props) => {
     rate,
     setRate,
   } = props;
+  const monthPicker = useRef(null);
+
+  const selectANewMonth = (year, month) => {
+    setPurchaseDate({ year, month });
+    monthPicker.current.dismiss();
+  };
 
   return (
     <section className="control-panel">
-      <Slider
-        fieldName="purchaseDate"
-        currentValue={purchaseDate}
-        min={1000}
-        max={20000}
-        step={1000}
-        defaultValue={15000}
-        handleInputChange={setPurchaseDate}
-      ></Slider>
+      <Picker
+        ref={monthPicker}
+        years={30}
+        value={purchaseDate}
+        lang={months}
+        onChange={selectANewMonth}
+      >
+        <a onClick={() => monthPicker.current.show()}>
+          Starting month {`Year: ${purchaseDate.year} `} {purchaseDate.month}
+        </a>
+      </Picker>
       <Slider
         fieldName="loan"
         currentValue={loan}
