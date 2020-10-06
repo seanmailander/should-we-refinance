@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import "react-month-picker/css/month-picker.css";
 import { Main } from "../components/main";
 
 function App() {

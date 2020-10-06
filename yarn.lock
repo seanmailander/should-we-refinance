@@ -8620,6 +8620,13 @@ react-is@^16.12.0, react-is@^16.8.1, react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-month-picker@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/react-month-picker/-/react-month-picker-2.2.0.tgz#37e728056a2e2813fdda7470f86fd8e30664699e"
+  integrity sha512-nn4pwmlqA6xtOWY3/FiTpKbSJHVNvIH0iwRIvvIJVcqFSU5HrsroKtrFkKJolwFo6owhl7fiDuaoj4VWCZQpdw==
+  dependencies:
+    react-tapper "^0.1.16"
+
 react-scripts@3.4.3:
   version "3.4.3"
   resolved "https://registry.yarnpkg.com/react-scripts/-/react-scripts-3.4.3.tgz#21de5eb93de41ee92cd0b85b0e1298d0bb2e6c51"
@@ -8679,6 +8686,11 @@ react-scripts@3.4.3:
     workbox-webpack-plugin "4.3.1"
   optionalDependencies:
     fsevents "2.1.2"
+
+react-tapper@^0.1.16:
+  version "0.1.20"
+  resolved "https://registry.yarnpkg.com/react-tapper/-/react-tapper-0.1.20.tgz#6caa95d6e5f1d1015a496593c8ebb8605e4c9dc5"
+  integrity sha512-jKfB/YMaOzrRkJ+yU99NHohFiEdz0XnVFRStVPzhc/tMq2XvwNmGE3gn4+83gZEvr6uhsI9PN4mc2st5msuPCQ==
 
 react@^16.13.1:
   version "16.13.1"
