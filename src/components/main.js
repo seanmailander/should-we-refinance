@@ -28,23 +28,29 @@ export const Main = () => {
 
   return (
     <React.Fragment>
-      <Past
-        purchaseDate={purchaseDate}
-        setPurchaseDate={setPurchaseDate}
-        loan={loan}
-        setLoan={setLoan}
-        term={term}
-        setTerm={setTerm}
-        rate={rate}
-        setRate={setRate}
-      ></Past>
-      <Present loan={loan} remaining={remaining} setRemaining={setRemaining}></Present>
-      <Future
-        newTerm={newTerm}
-        setNewTerm={setNewTerm}
-        newRate={newRate}
-        setNewRate={setNewRate}
-      ></Future>
+      <section className="controls">
+        <Past
+          purchaseDate={purchaseDate}
+          setPurchaseDate={setPurchaseDate}
+          loan={loan}
+          setLoan={setLoan}
+          term={term}
+          setTerm={setTerm}
+          rate={rate}
+          setRate={setRate}
+        ></Past>
+        <Present
+          loan={loan}
+          remaining={remaining}
+          setRemaining={setRemaining}
+        ></Present>
+        <Future
+          newTerm={newTerm}
+          setNewTerm={setNewTerm}
+          newRate={newRate}
+          setNewRate={setNewRate}
+        ></Future>
+      </section>
       <Results
         purchaseDate={luxonFromPicker(purchaseDate)}
         loan={loan}

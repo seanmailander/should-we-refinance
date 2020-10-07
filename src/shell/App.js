@@ -6,7 +6,7 @@ import { Main } from "../components/main";
 function App() {
   return (
     <React.Fragment>
-      <header className="App-header">Should We Refinance?</header>
+      <h1>Should We Refinance?</h1>
       <Main></Main>
     </React.Fragment>
   );

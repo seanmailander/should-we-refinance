@@ -34,6 +34,7 @@ export const Past = (props) => {
 
   return (
     <section className="control-panel">
+      The Past
       <Picker
         ref={monthPicker}
         years={30}
@@ -41,13 +42,13 @@ export const Past = (props) => {
         lang={months}
         onChange={selectANewMonth}
       >
-        <a onClick={() => monthPicker.current.show()}>
-          Starting month
+        <button onClick={() => monthPicker.current.show()}>
+          Loan started{" "}
           {`${months[purchaseDate.month - 1]} ${purchaseDate.year}`}
-        </a>
+        </button>
       </Picker>
       <Slider
-        fieldName="loan"
+        fieldName="Loan amount"
         currentValue={loan}
         min={200000}
         max={400000}
@@ -56,7 +57,7 @@ export const Past = (props) => {
         handleInputChange={setLoan}
       ></Slider>
       <Slider
-        fieldName="term"
+        fieldName="Years"
         currentValue={term}
         min={15}
         max={30}
@@ -65,7 +66,7 @@ export const Past = (props) => {
         handleInputChange={setTerm}
       ></Slider>
       <Slider
-        fieldName="rate"
+        fieldName="Interest rate"
         currentValue={rate}
         min={2}
         max={5}
