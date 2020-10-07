@@ -12,6 +12,20 @@
     "react-month-picker": "^2.2.0",
     "react-scripts": "3.4.3"
   },
+  "watch": {
+    "css": {
+      "patterns": ["src/shell"],
+      "extensions": "css",
+      "runOnChangeOnly": false,
+      "quiet": true
+    },
+    "build": {
+      "patterns": ["src"],
+      "extensions": "js,jsx",
+      "runOnChangeOnly": false,
+      "quiet": true
+    }
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
