@@ -108,19 +108,14 @@ export const recalculate = ({
   // If it continues
   const projectedInterest = 300000.0;
 
-  console.log(
-    `You've paid ${amountPaid} instead of typical ${usualRemaining} in ${timeTakenInMonths} months`
-  );
-  console.log(
-    `You typically would have been paying ${scheduledPayment} per month`
-  );
-  console.log(
-    `But instead have effectively paid ${payment} per month over the last ${timeTakenInMonths} months`
-  );
-
   return {
     effectiveMonthly,
     interestPaid,
     projectedInterest,
+    amountPaid,
+    usualRemaining,
+    timeTakenInMonths,
+    scheduledPayment,
+    payment,
   };
 };
