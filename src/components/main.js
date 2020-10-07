@@ -38,7 +38,7 @@ export const Main = () => {
         rate={rate}
         setRate={setRate}
       ></Past>
-      <Present remaining={remaining} setRemaining={setRemaining}></Present>
+      <Present loan={loan} remaining={remaining} setRemaining={setRemaining}></Present>
       <Future
         newTerm={newTerm}
         setNewTerm={setNewTerm}

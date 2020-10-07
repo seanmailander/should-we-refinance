@@ -2,17 +2,17 @@ import React from "react";
 import { Slider } from "./slider";
 
 export const Present = (props) => {
-  const { remaining, setRemaining } = props;
+  const { loan, remaining, setRemaining } = props;
 
   return (
     <section className="control-panel">
       <Slider
         fieldName="remaining"
         currentValue={remaining}
-        min={200000}
-        max={400000}
+        min={100000}
+        max={loan}
         step={20000}
-        defaultValue={320000}
+        defaultValue={loan - 20000}
         handleInputChange={setRemaining}
       ></Slider>
     </section>

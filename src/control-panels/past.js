@@ -42,7 +42,8 @@ export const Past = (props) => {
         onChange={selectANewMonth}
       >
         <a onClick={() => monthPicker.current.show()}>
-          Starting month {`Year: ${purchaseDate.year} `} {purchaseDate.month}
+          Starting month
+          {`${months[purchaseDate.month - 1]} ${purchaseDate.year}`}
         </a>
       </Picker>
       <Slider
